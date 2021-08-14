@@ -1,4 +1,8 @@
 import StarRatingComponent from 'react-rating-stars-component';
+import React from 'react'
+import {Link} from 'react-router-dom';
+import { Button } from 'react-bootstrap';
+
 const MovieCard = ({movie}) => {
     return (
     <div className='card'>
@@ -7,6 +11,9 @@ const MovieCard = ({movie}) => {
         </div>
         <div  className='movieContent'>
             <h1 className='title' style={{ color: 'red', fontSize: 35}}>{movie.title}</h1>
+
+            <Link to={`/Components/Details/${movie.title}`}> <Button variant="primary">Details</Button></Link>
+
             <StarRatingComponent
                 starCount={7}
                 value={movie.rate}
@@ -16,7 +23,7 @@ const MovieCard = ({movie}) => {
 
     </div>
             
-            <p className='descrition' style={{ margin: 100, marginTop: 20, marginBottom: 20, maxWidth: 350, paddingLeft: '7.5rem', fontSize: 15 }}>{movie.description}</p>
+            
             
     </div>
     )
